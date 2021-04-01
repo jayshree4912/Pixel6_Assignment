@@ -1,0 +1,68 @@
+  
+<div class="text-center" style="background-color:#a8d30c; padding:20px 0px; color: white;font-style: italic;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: large;">
+  <!-- <a href="https://jsonworld.com"> -->
+    <marquee direction="right" ><h2><b>Apply For Personal Loan</b></h2></marquee>
+  <!-- </a> -->
+  <!-- <a href="https://jsonworld.com/demo/angular-8-reative-form-validation-example-and-tutorial" target="_blank"> -->
+    <span><h3>Application Form</h3></span>
+  <!-- </a> -->
+</div>
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="padding-top:5px;"></div>
+<div class="container" style="background-image: url(assets/img3.jpg); ">
+  <div class="row">
+      <div class="col-md-4 offset-md-4">
+          <form [formGroup]="registerForm" (ngSubmit)="signup();">
+            <div class="formbox">
+              <div class="form-group" style="padding-top: 4px;">
+                <br><input type="text" formControlName="city" class="form-control" placeholder="City" [ngClass]="{ 'is-invalid': submitted && fval.city.errors }"/>
+                <div *ngIf="submitted && fval.city.errors" class="invalid-feedback">
+                    <div *ngIf="fval.city.errors.required">
+                        City is required and must be a valid City
+                    </div>
+                  
+                </div>
+              </div>
+              <div class="form-group">
+              <br>  <input type="text" formControlName="pannumber" class="form-control" placeholder="PAN Number" maxlength="10" minlength="10" [ngClass]="{ 'is-invalid': submitted && fval.pannumber.invalid }" required />
+                <div *ngIf="submitted && fval.pannumber.errors" class="invalid-feedback">
+                    <div *ngIf="fval.pannumber.errors.required">PAN No. is required</div>
+                    <div *ngIf="fval.pannumber.errors.minlength">PAN Number must be length of 10 </div>
+                  </div>
+              </div>
+                <div class="form-group">
+                 <br> <input type="text" formControlName="fullName" class="form-control" placeholder="Full Name" maxlength="140" [ngClass]="{ 'is-invalid': submitted && fval.fullName.errors }"/>
+                  <div *ngIf="submitted && fval.fullName.errors" class="invalid-feedback">
+                      <div *ngIf="fval.fullName.errors.required">
+                          Full Name is required and must be a valid name
+                      </div>
+                    
+                  </div>
+                </div>
+                <div class="form-group">
+                 <br> <input type="email" formControlName="email" class="form-control" placeholder="Email" maxlength="255" [ngClass]="{ 'is-invalid': submitted && fval.email.errors }" />
+                  <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">
+                      <div *ngIf="fval.email.errors.required">Email is required</div>
+                      <div *ngIf="fval.email.errors.email">Enter a valid email address</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                <br>  <div class="onerow"><input value="+91|" style="width:2cm ;" disabled/>&nbsp;<input type="text" formControlName="phone" class="form-control" placeholder="Mobile No." maxlength="10" minlength="10" [ngClass]="{ 'is-invalid': submitted && fval.phone.invalid }" style="width: 7.2cm;"  required /></div>
+                  <div *ngIf="submitted && fval.phone.errors" class="invalid-feedback">
+                      <div *ngIf="fval.phone.errors.required">Mobile No. is required</div>
+                  </div>
+                </div>
+               
+
+
+                <div class="form-group"><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button href="verification.html" type="submit" class="btn btn-primary signin" style="background-color: black;color: white;width: 5cm;">Get OTP <span class="arrowbtn"><span
+                        class="fa fa-arrow-right"></span></span></button><br><br>
+                </div>
+                
+              </div>
+          </form>
+        </div>
+  </div>
+</div>

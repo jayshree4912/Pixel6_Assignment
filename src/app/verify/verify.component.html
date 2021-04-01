@@ -1,0 +1,33 @@
+<html>
+  <style>
+    .box{
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .span{
+      color: limegreen;
+    }
+  </style>
+  <body>
+                  
+    <div class="form-group">
+      <div class="box">
+        Generated OTP is <span id ="otp"></span>
+      </div>
+      <br> 
+      <button type="button" onclick="generate()">GET OTP </button>
+    </div>
+    <script>
+      function generate(){
+        let num= '1234567890';
+        let OTP='';
+        for(let i=0;i<4;i++){
+          OTP+=num[Math.floor(Math.random()*10)];
+        }
+        document.getElementById('otp')=OTP;
+      }
+    </script>
+</body>
+</html>
